@@ -16,11 +16,7 @@ async def start_handler(message: Message) -> None:
     Args:
         message (Message): _description_
     """
-    await message.answer("Привет! Я помогу тебе познакомиться со мной поближе.\
-                      Если хочешь увидеть мое последнее селфи: напиши 'Селфи',\
-                      если фото из старшей школы: 'Старшая школа',\
-                      если хочешь узнать о моем главном увлечении: 'Увлечение'.\
-                      Также есть вариант выбрать что-нибудь из меню. Для этого просто тыкни сюда /menu")
+    await message.answer(config.START_MESSAGE)
 
 
 @router.message(Command(commands=["menu"]))
@@ -30,7 +26,7 @@ async def menu(message: Message) -> None:
     Args:
         message (Message): _description_
     """
-    await message.answer('Выбирай о чем хочешь послушать войс:', reply_markup=keyboard.menu)
+    await message.answer(config.CHOOSE_VOICE_TEXT, reply_markup=keyboard.menu)
     
 @router.message(Command(commands=["next_step"]))
 async def menu(message: Message) -> None:
@@ -39,10 +35,10 @@ async def menu(message: Message) -> None:
     Args:
         message (Message): _description_
     """
-    await message.answer('Здесь что-то про следующий шаг')
+    await message.answer(config.NEXT_STEP_TEXT)
     
     
-@router.message(F.text == "Селфи")
+@router.message(F.text.lower() == "селфи")
 async def selfie(message: Message) -> None:
     """_summary_
 
@@ -52,7 +48,7 @@ async def selfie(message: Message) -> None:
     await message.answer_photo(config.SELFIE_URL)   
     
     
-@router.message(F.text == "Старшая школа")
+@router.message(F.text.lower() == "старшая школа")
 async def hight_school(message: Message) -> None:
     """_summary_
 
@@ -62,7 +58,7 @@ async def hight_school(message: Message) -> None:
     await message.answer_photo(config.HIGH_SCHOOL)     
     
     
-@router.message(F.text == "Увлечение")
+@router.message(F.text.lower() == "увлечение")
 async def hobby(message: Message) -> None:
     """_summary_
 
@@ -113,3 +109,12 @@ async def babushka(callback: types.CallbackQuery) -> None:
         callback (types.CallbackQuery): _description_
     """
     await callback.message.answer(config.REP_URL)
+    
+
+# @router.message_handler(content_types=[
+#     types.ContentType.VOICE,
+#     ])
+# async def voice_to_text
+
+
+
