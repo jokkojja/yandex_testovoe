@@ -1,4 +1,4 @@
-1. it clone <url>
+1. git clone <url>
 2. cd yandex_testovoe
 3. python3 venv -m <name.env>
 4. source <name.env>/bin/activate
