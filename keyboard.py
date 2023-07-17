@@ -5,5 +5,5 @@ menu = [
     [InlineKeyboardButton(text=config.SQL_TEXT, callback_data="sql_nosql")],
     [InlineKeyboardButton(text=config.LOVE_TEXT, callback_data="love_story")],
     [InlineKeyboardButton(text=config.REP_TEXT, callback_data="git_rep")]
-]
+] # prepared keyboard
 menu = InlineKeyboardMarkup(inline_keyboard=menu)
