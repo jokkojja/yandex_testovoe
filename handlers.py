@@ -66,7 +66,7 @@ async def hobby(message: Message) -> None:
     Args:
         message (Message): Process /next_step command
     """
-    await message.answer('Тут супер текст о моем увлечении') 
+    await message.answer(config.HOBBY_TEXT) 
     
 
 @router.callback_query(F.data == "grandma_GPT")
