@@ -1,5 +1,5 @@
-import config
 import requests
+import config
 
 class SpeechToText:
     def __init__(self):
