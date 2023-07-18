@@ -3,6 +3,9 @@ meta:
   toolchain:
     name: pip
     version: 3.11.0
-
+build:
+  requirementsPath: requirements.txt
 run:
   scriptName: main.py
+  persistenceMount: /data
+  containerPort: 80
