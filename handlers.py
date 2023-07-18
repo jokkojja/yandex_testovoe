@@ -111,6 +111,15 @@ async def git_rep(callback: types.CallbackQuery) -> None:
     """
     await callback.message.answer(config.REP_URL)
     
+@router.message(F.content_type == 'voice')
+async def get_voice_message(callback: types.CallbackQuery) -> None:
+    """ Sends this project url
+
+    Args:
+        callback (types.CallbackQuery): Object represents an incoming callback query from a callback button in an inline keyboard
+    """
+    
+    
 
 
 

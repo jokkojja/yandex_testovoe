@@ -4,6 +4,8 @@ TOKEN = '5673447297:AAECWAeluUYYCt01FdilVwhz8jvJpu3Wp2s'
 SELFIE_URL = 'https://ibb.co/YZLhP4n'
 HIGH_SCHOOL = 'https://ibb.co/PWq2pvL'
 REP_URL = 'https://github.com/jokkojja/yandex_testovoe'
+IAM_TOKEN = 't1.9euelZrIlZydxpWRjpbHnpDIz5yKmO3rnpWazYzGyceNi5rNmcnLnpKcmo_l8_dMSCda-e9pGHQX_d3z9wx3JFr572kYdBf9zef1656VmpSZnJCZlMjNmMyVz5SZmceW7_zF656VmpSZnJCZlMjNmMyVz5SZmceW.iX1yRZQyNH8xJvjlkZPdPGujLUzvZfbZAA1-2j1HPWzVjnyfFbZg8aodve8XRP2kQMZVBopfOJhvFN-oI8WGDg'
+FOLDER_ID = 'b1gvoth058ite8oniepe'
 
 #paths
 VOICE_PATH = 'voice_data'
