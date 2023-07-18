@@ -12,6 +12,17 @@ REP_URL = 'https://github.com/jokkojja/yandex_testovoe'
 IAM_TOKEN = os.getenv('IAM_TOKEN')
 FOLDER_ID = os.getenv('FOLDER_ID')
 
+#api-params
+HEADERS = {
+    'Authorization': f'Bearer {IAM_TOKEN}',
+    'Content-Type': 'application/x-www-form-urlencoded',
+}
+
+PARAMS = {
+    'folderId': FOLDER_ID,
+    'lang': 'ru-RU',
+}
+
 #paths
 VOICE_PATH = 'voice_data'
 BABUSHKA = os.path.join(VOICE_PATH, 'babushka.ogg')

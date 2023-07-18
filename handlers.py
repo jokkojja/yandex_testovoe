@@ -1,9 +1,12 @@
 from aiogram import types, F, Router
 from aiogram.types import Message, FSInputFile, ContentType
 from aiogram.filters import Command
+from aiogram.methods.get_file import GetFile
+import requests
 
 import config
 import keyboard
+from speech_to_text import SpeechToText
 
 
 router = Router()
@@ -112,13 +115,19 @@ async def git_rep(callback: types.CallbackQuery) -> None:
     await callback.message.answer(config.REP_URL)
     
 @router.message(F.content_type == 'voice')
-async def get_voice_message(callback: types.CallbackQuery) -> None:
-    """ Sends this project url
+async def get_voice_message(message: Message) -> None:
+    """_summary_
 
     Args:
-        callback (types.CallbackQuery): Object represents an incoming callback query from a callback button in an inline keyboard
+        message (Message): _description_
     """
-    
+    converter = SpeechToText()
+    file_id = message.voice.file_id
+    file = await GetFile(file_id = file_id)
+    file_path = file.file_path
+    voice_message = requests.get(f'https://api.telegram.org/file/bot{config.TOKEN}/{file_path}').content
+    text = converter.voice_to_text(voice_message)
+    await message.answer(f"Ваша команда: {text}") 
     
 
 
